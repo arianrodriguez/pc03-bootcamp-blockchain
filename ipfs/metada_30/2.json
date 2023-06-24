@@ -1,0 +1,12 @@
+{
+  "name": "COMMON#2",
+  "description": "NFT MOCHE collection by Pachacuy.io inspired by the fertility huacos of the Peruvian Moche culture",
+  "image": "ipfs://Qmb3mmKRWPvZpMbGfzHbQkyvkaDsMaTg7WZ1tzQhU8eJH6/2.png",
+  "attributes": [
+    { "trait_type": "MANTO", "value": "METAVERSO" },
+    { "trait_type": "BANCO", "value": "AMOR" },
+    { "trait_type": "CUY", "value": "CUY ALIEN" },
+    { "trait_type": "CHULLO", "value": "CHULLO PESCADOR" },
+    { "trait_type": "CARA", "value": "LENTES" }
+  ]
+}

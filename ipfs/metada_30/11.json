@@ -1,0 +1,12 @@
+{
+  "name": "RARE#11",
+  "description": "NFT MOCHE collection by Pachacuy.io inspired by the fertility huacos of the Peruvian Moche culture",
+  "image": "ipfs://QmQom452VNT4j5xGhkDsGN6tQE9gSEMC9mMLw9cX5zJFoc/11.png",
+  "attributes": [
+    { "trait_type": "MANTO", "value": "MANTO COSTA" },
+    { "trait_type": "BANCO", "value": "METAL" },
+    { "trait_type": "CUY", "value": "CUY PLATA" },
+    { "trait_type": "CHULLO", "value": "CHULLO ROJO" },
+    { "trait_type": "CARA", "value": "BROMA" }
+  ]
+}

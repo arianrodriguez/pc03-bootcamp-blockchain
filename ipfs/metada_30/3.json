@@ -1,0 +1,12 @@
+{
+  "name": "COMMON#3",
+  "description": "NFT MOCHE collection by Pachacuy.io inspired by the fertility huacos of the Peruvian Moche culture",
+  "image": "ipfs://QmXriZCnJ9c7UM1LyTkZzy2q9dcq5zKagbad3mspct2AKL/3.png",
+  "attributes": [
+    { "trait_type": "MANTO", "value": "MANTO COSTA" },
+    { "trait_type": "BANCO", "value": "EGIPCIO" },
+    { "trait_type": "CUY", "value": "CUY HIELO" },
+    { "trait_type": "CHULLO", "value": "GORRO PACHACUY" },
+    { "trait_type": "CARA", "value": "OJOS BASE" }
+  ]
+}

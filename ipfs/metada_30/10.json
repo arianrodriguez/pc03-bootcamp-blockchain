@@ -1,0 +1,12 @@
+{
+  "name": "RARE#10",
+  "description": "NFT MOCHE collection by Pachacuy.io inspired by the fertility huacos of the Peruvian Moche culture",
+  "image": "ipfs://QmPXfUpvdm8bWskHRGEZbf7SepD9yUuvsY2eWeCvhxu5YD/10.png",
+  "attributes": [
+    { "trait_type": "MANTO", "value": "MANTO FELICIDAD" },
+    { "trait_type": "BANCO", "value": "HIELO" },
+    { "trait_type": "CUY", "value": "CUY FUEGO" },
+    { "trait_type": "CHULLO", "value": "GANGSTER" },
+    { "trait_type": "CARA", "value": "OJOS BASE" }
+  ]
+}
