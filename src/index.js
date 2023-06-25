@@ -1,5 +1,4 @@
 import { BigNumber, Contract, providers, ethers, utils } from "ethers";
-var hre = require('hardhat');
 
 var usdcTknAbi = require('../artifacts/contracts/USDCoin.sol/USDCoin.json').abi;
 var miPrimerTknAbi = require('../artifacts/contracts/MiPrimerToken.sol/MyTokenMiPrimerToken.json').abi;
@@ -14,7 +13,9 @@ var usdcTkContract, miPrTokenContract, nftTknContract, pubSContract;
 async function initSCsGoerli() {
   provider = new providers.Web3Provider(window.ethereum);
 
-  //usdcTkContract = new ethers.Contract(usdcAddress, usdcTknAbi, provider);
+
+
+
   //miPrTokenContract = new ethers.Contract(miPrTknAdd, miPrimerTknAbi, provider);
   //pubSContract = new ethers.Contract(pubSContractAdd, publicSaleAbi, provider);
 }

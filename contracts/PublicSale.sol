@@ -7,18 +7,6 @@ import "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol"
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
-contract Counters {
-    uint256 private _counter;
-
-    function current() internal view returns (uint256) {
-        return _counter;
-    }
-
-    function increment() internal returns (uint256) {
-        return _counter++;
-    }
-}
-
 contract PublicSale is
     Initializable,
     PausableUpgradeable,

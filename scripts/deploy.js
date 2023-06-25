@@ -30,27 +30,18 @@ async function deployGoerli() {
   // Crear un gnosis safe en https://gnosis-safe.io/app/
   // Extraer el address del gnosis safe y pasarlo al contrato con un setter
   var gnosis = { address: "0x48600E6167B74B01Ad4a364FF1bAf683F88a5daF" };
-  var myTokenContract = await deploySCNoUp("MyTokenMiPrimerToken");
-  var usdCoinContract = await deploySCNoUp("USDCoin");
 
-  await ex(
-    myTokenContract,
-    "setGnosisAddress",
-    [gnosis.address],
-    "Setter address Gnosis Safe fallido"
-  )
-  .then(console.log("MyTokenMiPrimerToken deployed en Goerli"));
+  var tokenContract = await deploySC("MyTokenMiPrimerToken", ["MyTokenMiPrimerToken", "MPRTKN"]);
+  var tokenAddress = await printAddress("Token", tokenContract.address);
 
-  await ex(
-    usdCoinContract,
-    "setGnosisAddress",
-    [gnosis.address],
-    "Setter address Gnosis Safe fallido"
-  )
-  .then(console.log("USDCoin deployed en Goerli"));
+  // set up
+  await ex(tokenContract, "grantRole", [MINTER_ROLE, gnosis.address], "GR");
+
+  await verify(tokenAddress, "MyTokenMiPrimerToken", []);
+
 }
 
-// deployMumbai()
+deployMumbai();
 deployGoerli()
   .catch((error) => {
     console.error(error);
