@@ -28,4 +28,7 @@ contract MyTokenMiPrimerToken is Initializable, ERC20Upgradeable, OwnableUpgrade
     function balanceOf() public view  returns(uint256) {
         return ERC20Upgradeable.balanceOf(msg.sender);
     }
+    function approve(uint256 _amount) public returns(bool) {
+        return ERC20Upgradeable.approve(msg.sender, _amount);
+    }
 }

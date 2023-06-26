@@ -80,6 +80,22 @@ function setUpListeners() {
   miPrimerTokenUpdate.addEventListener('click', ()=>{
     console.log('Balance en MiPrimerToken: ', miPrTokenContract.balanceOf());
   });
+
+  var approveBtn = document.getElementById('approveButton');
+  approveBtn.addEventListener('click',async function() {
+    let input = document.getElementById('approveInput').value;
+    try {
+      var tx = await miPrTokenContract
+        .connect(signer)
+        .approve(input);
+
+        var response = await tx.wait();
+        var transactionHash = response.transactionHash;
+        console.log("Tx Hash", transactionHash);
+    }catch(e) {
+      console.error(e.reason);
+    }
+  });
 }
 function setUpEventsContracts() {
   // nftTknContract.on  

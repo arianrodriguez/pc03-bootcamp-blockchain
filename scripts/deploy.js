@@ -38,8 +38,8 @@ async function deployGoerli() {
   var publicSaleSC = await deploySC("PublicSale", [firstokenSC.address, gnosis.address]);
   var contractAd = await printAddress("publicSaleContract", publicSaleSC.address);
   // set up 
-  await ex(publicSaleSC, "setAddressMiPrimerToken", [firstokenSC.address], "AMPT");
-  await ex(publicSaleSC, "setGnosisSafeWallet", [gnosis.address], "GW");
+ // await ex(publicSaleSC, "setAddressMiPrimerToken", [firstokenSC.address], "AMPT");
+  //await ex(publicSaleSC, "setGnosisSafeWallet", [gnosis.address], "GW");
 
   await verify(contractAd, "publicSaleContract", []);
 
