@@ -2,7 +2,7 @@ require("dotenv").config();
 require("@nomicfoundation/hardhat-toolbox");
 require("@openzeppelin/hardhat-upgrades");
 
-//import('hardhat/config.js').HardhatUserConfig;
+import('hardhat/config.js').HardhatUserConfig;
 
 module.exports = {
   solidity: "0.8.9",

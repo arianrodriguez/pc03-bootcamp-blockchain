@@ -26,6 +26,8 @@ contract MiPrimerNft is ERC721, AccessControl, Pausable, ERC721Burnable {
         relayerOZ = _relayerOZ;
     }
 
+    event mintNFT(address to, uint256 id);
+
     modifier onlyRelayer() {
         require(msg.sender == relayerOZ, "NFT: not relayer insufficient permission");
         _;
@@ -55,6 +57,7 @@ contract MiPrimerNft is ERC721, AccessControl, Pausable, ERC721Burnable {
         //      * Mensaje de error: "Public Sale: id must be between 1 and 30"
         require(id<30, "Public Sale: id must be between 1 and 30");
         _safeMint(to, id);
+        emit mintNFT(to, id);
     }
 
     function tokenGroup(uint256 id) public pure returns (string memory) {

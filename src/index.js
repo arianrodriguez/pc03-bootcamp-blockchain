@@ -12,9 +12,13 @@ var usdcTkContract, miPrTokenContract, nftTknContract, pubSContract;
 
 async function initSCsGoerli() {
   provider = new providers.Web3Provider(window.ethereum);
+  var miPrimerTokenAddress = '0x90cAAdF2148cED44f2313e1921477196d0dAb220';
+  var usdcCoinAddress = '';
+  var publicSaleAddress = '';
 
-
-
+  miPrTokenContract = new ethers.Contract(miPrimerTokenAddress, miPrimerTknAbi, provider);
+  usdcTkContract = new ethers.Contract(usdcCoinAddress, usdcTknAbi, provider);
+  pubSContract = new ethers.Contract(publicSaleAddress, publicSaleAbi, provider);
 
   //miPrTokenContract = new ethers.Contract(miPrTknAdd, miPrimerTknAbi, provider);
   //pubSContract = new ethers.Contract(pubSContractAdd, publicSaleAbi, provider);
@@ -25,8 +29,8 @@ async function initSCsGoerli() {
 // Usar JSON-RPC
 // Se pueden escuchar eventos de los contratos usando el provider con RPC
 function initSCsMumbai() {
-  var nftAddress;
-  nftTknContract; // = new Contract...
+  var nftAddress = '';
+  nftTknContract = new Contract(nftAddress, nftTokenAbi, provider);
 }
 
 function setUpListeners() {
@@ -67,19 +71,28 @@ function setUpListeners() {
   });
   
   var usdcUpdate = document.getElementById('usdcUpdate');
-  usdcUpdate.addEventListener('click', async function() {
-    console.log(usdcTkContract.balanceOf(account));
-  })
+  usdcUpdate.addEventListener('click', ()=> {
+    console.log('Balance en USDCoin: ', usdcTkContract.balanceOf());
+  });
+
+
+  var miPrimerTokenUpdate = document.getElementById('miPrimerTknUpdate');
+  miPrimerTokenUpdate.addEventListener('click', ()=>{
+    console.log('Balance en MiPrimerToken: ', miPrTokenContract.balanceOf());
+  });
 }
 function setUpEventsContracts() {
   // nftTknContract.on  
+  nftTknContract.on('mintNFT', (to, id) => {
+    console.log(`NFT acuñado! para ${to}, con id ${id}`);
+  })
 }
 
 async function setUp() {
   initSCsGoerli();
   //initSCsMumbai();
   await setUpListeners();
-  //setUpEventsContracts();
+  setUpEventsContracts();
 }
 
 setUp()

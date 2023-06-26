@@ -42,6 +42,9 @@ contract PublicSale is
     function setGnosisSafeWallet(address _gnosisSafeWallet) public {
         gnosisSafeWallet = _gnosisSafeWallet;
     }
+    function setAddressMiPrimerToken(address _miPrimerToken) public {
+        miPrimerToken = IERC20Upgradeable(_miPrimerToken);
+    }
 
     function initialize(address _miPrimerToken, address _gnosisSafeWallet) public initializer {
         __Pausable_init();

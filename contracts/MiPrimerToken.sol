@@ -7,13 +7,13 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
 
 contract MyTokenMiPrimerToken is Initializable, ERC20Upgradeable, OwnableUpgradeable, UUPSUpgradeable {
+    address public gnosisAddress;
     function initialize() public initializer {
         __ERC20_init("MyTokenMiPrimerToken", "MPRTKN");
         __Ownable_init();
         _mint(msg.sender, 0); // Mint 0 tokens to initialize the supply
     }
 
-    address public gnosisAddress;
     function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
 
     function setGnosisAddress(address _gnosisAddress) public {
@@ -24,5 +24,8 @@ contract MyTokenMiPrimerToken is Initializable, ERC20Upgradeable, OwnableUpgrade
     }
      function decimals() public pure override returns(uint8) {
         return 18;
+    }
+    function balanceOf() public view  returns(uint256) {
+        return ERC20Upgradeable.balanceOf(msg.sender);
     }
 }

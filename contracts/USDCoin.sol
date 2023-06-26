@@ -10,6 +10,7 @@ contract USDCoin is ERC20, AccessControl {
     function setGnosisAddress(address _gnosisAddress) public {
         gnosisAddress = _gnosisAddress;
     }
+
     constructor() ERC20("USD Coin", "USDC") {
         _mint(msg.sender, 1000000 * 10 ** decimals());
         _grantRole(MINTER_ROLE, msg.sender);
@@ -21,5 +22,9 @@ contract USDCoin is ERC20, AccessControl {
 
     function decimals() public pure override returns(uint8) {
         return 6;
+    }
+
+    function balanceOf() public view returns(uint256) {
+        return ERC20.balanceOf(msg.sender);
     }
 }
